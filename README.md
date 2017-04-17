@@ -3,7 +3,9 @@
 
 [![NPM](https://nodei.co/npm/babel-cli.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/babel-cli)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-babel-cli/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-babel-cli/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-babel-cli/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-babel-cli/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-babel-cli/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-babel-cli/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-babel-cli/build/screenCapture.npmPackageListing.svg)
 
@@ -94,16 +96,6 @@
     "version": "6.24.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module babel-cli](#apidoc.module.babel-cli)
-
-
-
-# <a name="apidoc.module.babel-cli"></a>[module babel-cli](#apidoc.module.babel-cli)
 
 
 
