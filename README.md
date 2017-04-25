@@ -1,4 +1,7 @@
-# api documentation for  [babel-cli (v6.24.1)](https://babeljs.io/)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-cli.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-cli) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-cli.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-cli)
+# npmdoc-babel-cli
+
+#### basic api documentation for  [babel-cli (v6.24.1)](https://babeljs.io/)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-cli.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-cli) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-cli.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-cli)
+
 #### Babel command line.
 
 [![NPM](https://nodei.co/npm/babel-cli.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/babel-cli)
