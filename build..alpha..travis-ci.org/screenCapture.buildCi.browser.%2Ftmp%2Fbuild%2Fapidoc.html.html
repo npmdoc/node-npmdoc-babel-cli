@@ -54,12 +54,471 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.babel-cli">module babel-cli</a><ol>
 
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">babel-cli.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-cli.util">module babel-cli.util</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">babel-cli.util.</span>__esModule</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.addSourceMappingUrl">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>addSourceMappingUrl
+            <span class="apidocSignatureSpan">(code, loc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.canCompile">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>canCompile
+            <span class="apidocSignatureSpan">(filename, altExts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.chmod">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>chmod
+            <span class="apidocSignatureSpan">(src, dest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.compile">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>compile
+            <span class="apidocSignatureSpan">(filename, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.log">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>log
+            <span class="apidocSignatureSpan">(msg)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.readdir">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>readdir
+            <span class="apidocSignatureSpan">(root, filter, files, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.readdirFilter">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>readdirFilter
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.requireChokidar">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>requireChokidar
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.shouldIgnore">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>shouldIgnore
+            <span class="apidocSignatureSpan">(loc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-cli.util.transform">
+            function <span class="apidocSignatureSpan">babel-cli.util.</span>transform
+            <span class="apidocSignatureSpan">(filename, code, opts)</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.babel-cli" id="apidoc.module.babel-cli">module babel-cli</a></h1>
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-cli.util" id="apidoc.module.babel-cli.util">module babel-cli.util</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.addSourceMappingUrl" id="apidoc.element.babel-cli.util.addSourceMappingUrl">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>addSourceMappingUrl
+        <span class="apidocSignatureSpan">(code, loc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addSourceMappingUrl(code, loc) {
+  return code + "\n//# sourceMappingURL=" + path.basename(loc);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  sourceFileName: slash(path.relative(dest + "/..", src)),
+  sourceMapTarget: path.basename(relative)
+});
+if (!commander.copyFiles &amp;&amp; data.ignored) return;
+
+if (data.map &amp;&amp; commander.sourceMaps &amp;&amp; commander.sourceMaps !== "inline") {
+  var mapLoc = dest + ".map";
+  data.code = util.<span class="apidocCodeKeywordSpan">addSourceMappingUrl</span>(data.code, mapLoc);
+  outputFileSync(mapLoc, (0, _stringify2.default)(data.map));
+}
+
+outputFileSync(dest, data.code);
+util.chmod(src, dest);
+
+util.log(src + " -&gt; " + dest);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.canCompile" id="apidoc.element.babel-cli.util.canCompile">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>canCompile
+        <span class="apidocSignatureSpan">(filename, altExts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function canCompile(filename, altExts) {
+  var exts = altExts || canCompile.EXTENSIONS;
+  var ext = _path2.default.extname(filename);
+  return (0, _includes2.default)(exts, ext);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  util.log(src + " -&gt; " + dest);
+}
+
+function handleFile(src, filename) {
+  if (util.shouldIgnore(src)) return;
+
+  if (util.<span class="apidocCodeKeywordSpan">canCompile</span>(filename, commander.extensions)) {
+    write(src, filename);
+  } else if (commander.copyFiles) {
+    var dest = path.join(commander.outDir, filename);
+    outputFileSync(dest, fs.readFileSync(src));
+    util.chmod(src, dest);
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.chmod" id="apidoc.element.babel-cli.util.chmod">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>chmod
+        <span class="apidocSignatureSpan">(src, dest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chmod(src, dest) {
+  fs.chmodSync(dest, fs.statSync(src).mode);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (data.map &amp;&amp; commander.sourceMaps &amp;&amp; commander.sourceMaps !== "inline") {
+    var mapLoc = dest + ".map";
+    data.code = util.addSourceMappingUrl(data.code, mapLoc);
+    outputFileSync(mapLoc, (0, _stringify2.default)(data.map));
+  }
+
+  outputFileSync(dest, data.code);
+  util.<span class="apidocCodeKeywordSpan">chmod</span>(src, dest);
+
+  util.log(src + " -&gt; " + dest);
+}
+
+function handleFile(src, filename) {
+  if (util.shouldIgnore(src)) return;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.compile" id="apidoc.element.babel-cli.util.compile">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>compile
+        <span class="apidocSignatureSpan">(filename, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function compile(filename, opts) {
+  try {
+    var code = fs.readFileSync(filename, "utf8");
+    return transform(filename, code, opts);
+  } catch (err) {
+    if (commander.watch) {
+      console.error(toErrorStack(err));
+      return { ignored: true };
+    } else {
+      throw err;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+module.exports = function (commander, filenames) {
+  function write(src, relative) {
+relative = relative.replace(/\.(\w*?)$/, "") + ".js";
+
+var dest = path.join(commander.outDir, relative);
+
+var data = util.<span class="apidocCodeKeywordSpan">compile</span>(src, {
+  sourceFileName: slash(path.relative(dest + "/..", src)),
+  sourceMapTarget: path.basename(relative)
+});
+if (!commander.copyFiles &amp;&amp; data.ignored) return;
+
+if (data.map &amp;&amp; commander.sourceMaps &amp;&amp; commander.sourceMaps !== "inline") {
+  var mapLoc = dest + ".map";
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.log" id="apidoc.element.babel-cli.util.log">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>log
+        <span class="apidocSignatureSpan">(msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function log(msg) {
+  if (!commander.quiet) console.log(msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+_commander2.default.option("-l, --whitelist [whitelist]", "Whitelist of helpers to ONLY include", _babelCore
+.util.list);
+_commander2.default.option("-t, --output-type [type]", "Type of output (global|umd|var)", "global");
+
+_commander2.default.usage("[options]");
+_commander2.default.parse(process.argv);
+
+console.<span class="apidocCodeKeywordSpan">log</span>((0, _babelCore.buildExternalHelpers)(_commander2.default.whitelist, _commander2
+.default.outputType));
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.readdir" id="apidoc.element.babel-cli.util.readdir">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>readdir
+        <span class="apidocSignatureSpan">(root, filter, files, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function read(root, filter, files, prefix) {
+  prefix = prefix || ''
+  files = files || []
+  filter = filter || noDotFiles
+
+  var dir = path.join(root, prefix)
+  if (!fs.existsSync(dir)) return files
+  if (fs.statSync(dir).isDirectory())
+    fs.readdirSync(dir)
+    .filter(filter)
+    .forEach(function (name) {
+      read(root, filter, files, path.join(prefix, name))
+    })
+  else
+    files.push(prefix)
+
+  return files
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (!fs.existsSync(filename)) return;
+
+  var stat = fs.statSync(filename);
+
+  if (stat.isDirectory(filename)) {
+    var dirname = filename;
+
+    util.<span class="apidocCodeKeywordSpan">readdir</span>(dirname).forEach(function (filename) {
+      var src = path.join(dirname, filename);
+      handleFile(src, filename);
+    });
+  } else {
+    write(filename, filename);
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.readdirFilter" id="apidoc.element.babel-cli.util.readdirFilter">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>readdirFilter
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function readdirFilter(filename) {
+  return readdir(filename).filter(function (filename) {
+    return util.canCompile(filename);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+filenames.forEach(function (filename) {
+  if (!fs.existsSync(filename)) return;
+
+  var stat = fs.statSync(filename);
+  if (stat.isDirectory()) {
+    var dirname = filename;
+
+    util.<span class="apidocCodeKeywordSpan">readdirFilter</span>(filename).forEach(function (filename) {
+      _filenames.push(path.join(dirname, filename));
+    });
+  } else {
+    _filenames.push(filename);
+  }
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.requireChokidar" id="apidoc.element.babel-cli.util.requireChokidar">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>requireChokidar
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requireChokidar() {
+  try {
+    return require("chokidar");
+  } catch (err) {
+    console.error("The optional dependency chokidar failed to install and is required for " + "--watch. Chokidar is likely not supported
+ on your platform.");
+    throw err;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  if (!commander.skipInitialBuild) {
+filenames.forEach(handle);
+  }
+
+  if (commander.watch) {
+var chokidar = util.<span class="apidocCodeKeywordSpan">requireChokidar</span>();
+
+filenames.forEach(function (dirname) {
+  var watcher = chokidar.watch(dirname, {
+    persistent: true,
+    ignoreInitial: true,
+    awaitWriteFinish: {
+      stabilityThreshold: 50,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.shouldIgnore" id="apidoc.element.babel-cli.util.shouldIgnore">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>shouldIgnore
+        <span class="apidocSignatureSpan">(loc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shouldIgnore(loc) {
+  return util.shouldIgnore(loc, index.opts.ignore, index.opts.only);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+outputFileSync(dest, data.code);
+util.chmod(src, dest);
+
+util.log(src + " -&gt; " + dest);
+  }
+
+  function handleFile(src, filename) {
+if (util.<span class="apidocCodeKeywordSpan">shouldIgnore</span>(src)) return;
+
+if (util.canCompile(filename, commander.extensions)) {
+  write(src, filename);
+} else if (commander.copyFiles) {
+  var dest = path.join(commander.outDir, filename);
+  outputFileSync(dest, fs.readFileSync(src));
+  util.chmod(src, dest);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-cli.util.transform" id="apidoc.element.babel-cli.util.transform">
+        function <span class="apidocSignatureSpan">babel-cli.util.</span>transform
+        <span class="apidocSignatureSpan">(filename, code, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function transform(filename, code, opts) {
+  opts = defaults(opts || {}, index.opts);
+  opts.filename = filename;
+
+  var result = babel.transform(code, opts);
+  result.filename = filename;
+  result.actual = code;
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+};
+
+var _eval = function _eval(code, filename) {
+code = code.trim();
+if (!code) return undefined;
+
+code = babel.<span class="apidocCodeKeywordSpan">transform</span>(code, {
+  filename: filename,
+  presets: program.presets,
+  plugins: (program.plugins || []).concat([replPlugin])
+}).code;
+
+return _vm2.default.runInThisContext(code, {
+  filename: filename
+...</pre></li>
+    </ul>
+
 
 </div>
 
